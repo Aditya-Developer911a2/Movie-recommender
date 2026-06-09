@@ -6,7 +6,7 @@ import os
 
 if not os.path.exists("similarity.pkl"):
 
-    url = "YOUR_RELEASE_URL"
+    url = "https://github.com/Aditya-Developer911a2/movie-recommender/releases/download/v1.0/similarity.pkl"
 
     response = requests.get(url, stream=True)
 
