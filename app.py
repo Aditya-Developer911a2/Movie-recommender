@@ -1,7 +1,18 @@
 import  streamlit as st
 import pickle
 import pandas as pd
+import requests
+import os
 
+if not os.path.exists("similarity.pkl"):
+
+    url = "YOUR_RELEASE_URL"
+
+    response = requests.get(url, stream=True)
+
+    with open("similarity.pkl", "wb") as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            f.write(chunk)
 
 def recommend(movie):
   movie_index = movies[movies['title'] == movie].index[0]
